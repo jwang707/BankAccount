@@ -13,6 +13,11 @@ public class BankAccount{
     return (Integer.toString(getAccountID()) + "\t" + getBalance());
   }
 
+  public String setPassword(String password){
+    this.password = password;
+    return password;
+  }
+
   public int getAccountID() {return accountID;}
   public double getBalance() {return balance;}
 
@@ -25,7 +30,7 @@ public class BankAccount{
   }
 
   public boolean withdraw(double amount){
-    if (balance - amount > 0) {
+    if (balance - amount > 0 && amount >= 0) {
       this.balance = balance - amount;
       return true;
     }
