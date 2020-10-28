@@ -4,6 +4,8 @@ public class Tester{
     System.out.println(myacc.toString());
     System.out.println(myacc.deposit(340304.39));
     System.out.println(myacc.toString());
+    System.out.println(myacc.withdraw(304.39));
+    System.out.println(myacc.toString());
   }
 
 }
