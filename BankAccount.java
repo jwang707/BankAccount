@@ -15,4 +15,13 @@ public class BankAccount{
 
   public int getAccountID() {return accountID;}
   public double getBalance() {return balance;}
+
+  public boolean deposit(double amount){
+      if (amount >= 0) {
+        this.balance = balance + amount;
+        return true;
+      }
+      return false;
+  }
+
 }
