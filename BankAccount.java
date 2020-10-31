@@ -10,7 +10,7 @@ public class BankAccount{
   }
 
   public String toString(){
-    return (Integer.toString(getAccountID()) + "\t" + getBalance());
+    return ("#" + Integer.toString(getAccountID()) + "\t $" + getBalance());
   }
 
   public String setPassword(String password){
@@ -36,5 +36,24 @@ public class BankAccount{
     }
     return false;
   }
+
+  private boolean authenticate(String password){
+    return (this.password.equals(password));
+  }
+
+  public boolean transferTo(BankAccount other, double amount, String password){
+    if (authenticate(password) && withdraw(amount)) {
+      this.balance -= amount;
+      other.balance += amount;
+      return true;
+    }
+
+    return false;
+  }
+
+
+
+
+
 
 }
